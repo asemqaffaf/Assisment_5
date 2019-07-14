@@ -58,23 +58,21 @@ odd start with capital letter
 Ex: repeatChar("a",2); => "a, A"
 Ex: repeatChar("C",5); => "C, c, C, c, C"
 */
-
 function repeatChar(str, num) {
   var str2 = "";
   var startNumber = 0;
   while (startNumber != num) {
-    if (num % 2 == 0) {
+    if (startNumber % 2 == 0) {
+      str2 += str.toUpperCase();
     }
-    str2 += str.toUpperCase();
-    startNumber++;
-
-    str2 += str.toLowerCase();
-
+    if (startNumber % 2 != 0) {
+      str2 += str.toLowerCase();
+    }
     startNumber++;
   }
   return str2;
 }
-console.log(repeatChar("a", 2));
+console.log(repeatChar("a", 5));
 
 /* Q4:
 Using recursion 
